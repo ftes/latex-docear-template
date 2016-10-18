@@ -1,0 +1,3 @@
+[submodule "mm2latex"]
+	path = mm2latex
+	url = git@github.com:ftes/mm2latex.git

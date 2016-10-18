@@ -1,0 +1,20 @@
+# Input files (user provides these)
+body.mm
+body.tex
+bib.bib
+
+
+# Latex tmp files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.toc
+
+# generated pdf
+thesis.pdf

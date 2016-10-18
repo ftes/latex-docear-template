@@ -1,0 +1,28 @@
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+
+\documentclass[
+	a4paper,
+	12pt,
+	abstracton,   % make abstract headings
+	%twoside,      % enable two sided printing
+	%openright     % start chapters on right pages
+	titlepage,    % make dedication and abstract titlepages
+]{scrreprt}
+
+\input{boilerplate/thesis.beforedocument}
+
+\begin{document}
+\input{boilerplate/thesis.startofdocument}
+
+%\body
+\input{body.tex}
+
+%\appendix
+% appendices come here
+
+\input{boilerplate/thesis.bibliography}
+
+\end{document}
