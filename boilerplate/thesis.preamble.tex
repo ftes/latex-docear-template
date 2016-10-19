@@ -7,7 +7,6 @@
 \usepackage{microtype} %cites not over line ending
 \usepackage{float} %allow figure placement option H
 \usepackage[backend=biber,style=alphabetic,urldate=long]{biblatex} %allow @Online bibliography entry
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}			% encoding of the font
 \usepackage[english]{babel}
 \usepackage{geometry}
@@ -33,14 +32,19 @@
 
 %order of these three is important
 %\usepackage{varioref}
+
 \usepackage[
-	%pdftex,
-	colorlinks,
-	linktocpage,
-	linkcolor=black,
-	citecolor=black,
-	urlcolor=black
+	%colorlinks, linkcolor=black, citecolor=black, urlcolor=black		% for printing: no borders, all links black
+	bookmarks=true,		% create pdf bookmarks
+	bookmarksnumbered=true,
+	linktocpage		% page number as link in TOC (instead of text)
 ]{hyperref} %links in document
+\hypersetup{
+       pdftitle        = {\mytitle},
+       pdfsubject      = {\mysubtitle},
+       pdfauthor       = {\myauthor},
+}
+
 \usepackage{cleveref}
 
 \usepackage{enumitem} %deeper lists
