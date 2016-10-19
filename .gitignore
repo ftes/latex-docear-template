@@ -2,7 +2,7 @@
 body.mm
 body.tex
 bib.bib
-
+images/
 
 # Latex tmp files
 *.aux

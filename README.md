@@ -10,6 +10,7 @@ Structuring the mindmap: see [documentation of mm2latex](mm2latex/README.md).
 Add (e.g. link):
 - `body.mm`: input mindmap file
 - `bib.bib`: bibliography
+- `images`: folder with images (configure in mindmap as `image_directory` attribute on root node)
 
 Modify:
 - `metadata.tex`: author name, date, thesis title etc.

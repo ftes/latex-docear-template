@@ -1,4 +1,6 @@
 \usepackage{graphicx}
+\usepackage[space]{grffile} % allow spaces in image path
+
 \usepackage{verbatim}
 \usepackage{latexsym}
 \usepackage{boilerplate/mathchars}
@@ -35,8 +37,8 @@
 
 \usepackage[
 	%colorlinks, linkcolor=black, citecolor=black, urlcolor=black		% for printing: no borders, all links black
-	bookmarks=true,		% create pdf bookmarks
-	bookmarksnumbered=true,
+	bookmarks,		% create pdf bookmarks
+	bookmarksnumbered,	% bookmarks with numbers
 	linktocpage		% page number as link in TOC (instead of text)
 ]{hyperref} %links in document
 \hypersetup{
