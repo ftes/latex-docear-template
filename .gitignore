@@ -2,7 +2,8 @@
 body.mm
 body.tex
 bib.bib
-images/
+# linked folder
+images
 
 # Latex tmp files
 *.aux
