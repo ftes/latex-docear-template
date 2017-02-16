@@ -20,6 +20,7 @@ Modify:
 
 Install (dependencies):
 - `tex`: some Tex distribution, e.g. _Tex Live_
+- `xelatex`: e.g. in `texlive-xetex`
 - `arara`: manages the pdflatex and biber build
 - `xsltproc`: transforms the mindmap to Latex using an `xslt` file
 
