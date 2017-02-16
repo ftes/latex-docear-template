@@ -5,7 +5,7 @@ I suggest using [Docear](http://www.docear.org/) to build such a mindmap. It fea
 References on nodes are transformed to latex citations.
 
 ## Usage
-Structuring the mindmap: see [documentation of mm2latex](mm2latex/README.md).
+Structuring the mindmap: see [documentation of mm2latex](http://github.com/ftes/mm2latex/README.md).
 
 Clone:
 - `git clone --recursive git@github.com:ftes/latex-docear-template` (with submodules)
