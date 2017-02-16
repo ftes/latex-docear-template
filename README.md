@@ -19,9 +19,7 @@ Modify:
 - `metadata.tex`: author name, date, thesis title etc.
 
 Install (dependencies):
-- `tex`: some Tex distribution, e.g. _Tex Live_
-- `xelatex`: e.g. in `texlive-xetex`
-- `arara`: manages the pdflatex and biber build
+- `texlive texlive-xetex texlive-bibtex-extra biber`: Tex distribution, e.g. _Tex Live_, and _arara_
 - `xsltproc`: transforms the mindmap to Latex using an `xslt` file
 
 Init submodules (if you didn't `clone --recursive`):
