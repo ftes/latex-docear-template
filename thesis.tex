@@ -1,28 +1,74 @@
-% arara: xelatex
-% arara: biber
-% arara: xelatex
+% arara: pdflatex
+% arara: bibtex
+% arara: pdflatex
 % arara: clean: {files: [thesis.aux, thesis.bbl, thesis.blg, thesis.bcf, thesis.lof, thesis.log, thesis.lot, thesis.out, thesis.run.xml, thesis.toc]}
 
-\documentclass[
-	a4paper,
-	12pt,
-	abstracton,   % make abstract headings
-	%twoside,      % enable two sided printing
-	%openright     % start chapters on right pages
-	titlepage,    % make dedication and abstract titlepages
-]{scrreprt}
+\documentclass{scrbook} % <= Druckversion: "scrbook", Bildschirmversion: "scrreprt"
+\newcommand\bcor{8mm} % <= falls nötig, Bindungskorrektur für Druckversion (ohne Layoutzerstörung bei Anpassung)
+\usepackage{osm-thesis}
+\usepackage{cleveref} % multiple references
+\usepackage[space]{grffile} % allow spaces in graphics file name (even if it has no `.<file extension>`)
+\usepackage{enumitem} %deeper lists
+\setlistdepth{9}
+\setlist[itemize,1]{label=$\bullet$}
+\setlist[itemize,2]{label=$\bullet$}
+\setlist[itemize,3]{label=$\bullet$}
+\setlist[itemize,4]{label=$\bullet$}
+\setlist[itemize,5]{label=$\bullet$}
+\setlist[itemize,6]{label=$\bullet$}
+\setlist[itemize,7]{label=$\bullet$}
+\setlist[itemize,8]{label=$\bullet$}
+\setlist[itemize,9]{label=$\bullet$}
+\renewlist{itemize}{itemize}{9}
+% fix http://tex.stackexchange.com/questions/311426/bibliography-error-use-of-blxbblverbaddi-doesnt-match-its-definition-ve/311428
+\makeatletter
+\def\blx@maxline{77}
+\makeatother
 
-\input{boilerplate/thesis.beforedocument}
+% ABOUT
+\newcommand{\hpitype}{Bachelorarbeit/Masterarbeit}
+\newcommand{\hpiauthor}{Maxi Musterfrau}
+\newcommand{\hpititle}{Die Geräusche eines zerknitterten Bonboneinwickelpapiers als Untersuchung eines ungeordneten Systems}
+\newcommand{\hpititleother}{The Noise from a Crumpled Candy Wrapper as a Probe of a Disordered System} % <= das Studienreferat verlangt einen deutschen UND englischen Titel
+\newcommand{\hpisupervisor}{Prof.\,Dr.\,Andreas Polze, Max Mustermann}
+\newcommand{\hpichair}{Fachgebiet für Betriebssysteme und Middleware}
+\newcommand{\hpiexternalsupervisor}{Wile\,E. Coyote, Road Runner}
+\newcommand{\hpiexternal}{ACME Cooperation}
+\newcommand{\hpidate}{\today}
+\newcommand{\hpihpi}{Hasso-Plattner-Institut an der Universität Potsdam}
+
+% DOCUMENT
+%\KOMAoption{draft}{true} % <= z.B. zum "Debuggen" der Overfull-Boxes
+\bibliography{bibliography}
 
 \begin{document}
-\input{boilerplate/thesis.startofdocument}
+	\selectlanguage{english}
 
-%\body
-\input{body.tex}
+	% Einband
+	\pagenumbering{alph}
+	\ifisbook\include{content/coverpage}\fi
+	\ifisbook\cleardoubleemptypage\fi
 
-%\appendix
-% appendices come here
+	% (Haupt-)Titelseite, Abstract, ggf. Danksagung & Inhaltsverzeichnis
+	\pagenumbering{roman}
+	\include{content/titlepage}
+	\ifisbook\cleardoubleemptypage\fi\include{content/abstract}
+	%\ifisbook\cleardoubleemptypage\fi\include{content/dedication}
+	\tableofcontents
+	\cleardoublepage
 
-\input{boilerplate/thesis.bibliography}
+	% Textteil
+	\pagenumbering{arabic}
+	\include{body}
+
+	% ggf. Anhang
+	\appendix\include{content/appendix} % example
+
+	% Bibliographie
+	\addcontentsline{toc}{chapter}{\refname}
+	\printbibliography
+
+	% Eigenständigkeitserklärung
+	\ifisbook\pagestyle{plain}\cleardoubleemptypage\include{content/disclaimer}\fi
 
 \end{document}

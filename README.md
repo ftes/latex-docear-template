@@ -12,14 +12,11 @@ Clone:
 
 Add (e.g. link):
 - `body.mm`: input mindmap file
-- `bib.bib`: bibliography
-- `images`: folder with images (configure in mindmap as `image_directory` attribute on root node)
-
-Modify:
-- `metadata.tex`: author name, date, thesis title etc.
+- `bibliography.bib`: bibliography
+- `content/images`: folder with images (configure in mindmap as `image_directory` attribute on root node)
 
 Install (dependencies):
-- `texlive texlive-xetex texlive-bibtex-extra texlive-generic-extra biber`: Tex distribution, e.g. _Tex Live_, and _arara_
+- `texlive texlive-bibtex-extra texlive-generic-extra texlive-fonts-extra`: Tex distribution, e.g. _Tex Live_, and _arara_
 - `xsltproc`: transforms the mindmap to Latex using an `xslt` file
 
 Init submodules (if you didn't `clone --recursive`):

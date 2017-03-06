@@ -1,9 +1,9 @@
 # Input files (user provides these)
 body.mm
 body.tex
-bib.bib
+bibliography.bib
 # linked folder
-images
+/content/images
 
 # Latex tmp files
 *.aux
